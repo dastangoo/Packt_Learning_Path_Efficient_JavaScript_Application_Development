@@ -1,6 +1,5 @@
-import { describe, it } from 'mocha';
-import { expect } from 'chai';
-import alimentProvider from '../../src/provider/aliment';
+const expect = require('chai').expect;
+const alimentProvider = require('../../src/provider/aliment');
 
 describe('aliment provider', () => {
 

@@ -30,8 +30,7 @@ module.exports = function(grunt) {
 
         open: {
             preview: {
-                path: 'http://<%=pkg.config.host%>:<%=pkg.config.port%>/index.html',
-                app:  '<%=pkg.config.browser%>'
+                path: 'http://<%=pkg.config.host%>:<%=pkg.config.port%>/index.html'
             }
         },
 

@@ -1,5 +1,5 @@
-import express from 'express';
-import alimentProvider from './provider/aliment';
+const express = require('express');
+const alimentProvider = require('./provider/aliment');
 
 const app = express();
 

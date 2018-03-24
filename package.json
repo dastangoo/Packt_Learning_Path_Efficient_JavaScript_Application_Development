@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "Take the control back on the food you ingest.",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "start": "node index"
   },
   "author": "Bertrand Chevrier <chevrier.bertrand@gmail.com>",
   "license": "UNLICENSED",
@@ -27,7 +28,6 @@
   },
   "config": {
     "host": "127.0.0.1",
-    "port": 4423,
-    "browser": "fxdev -no-remote"
+    "port": 4423
   }
 }

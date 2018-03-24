@@ -18,4 +18,4 @@ const alimentProvider = function alimentProvider(){
     };
 };
 
-export default alimentProvider;
+module.exports = alimentProvider;
