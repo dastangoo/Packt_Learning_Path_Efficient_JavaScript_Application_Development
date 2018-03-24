@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const alimentProvider = require('../../src/provider/aliment');
+const alimentProvider = require('../../../src/provider/aliment');
 
 describe('aliment provider', () => {
 
