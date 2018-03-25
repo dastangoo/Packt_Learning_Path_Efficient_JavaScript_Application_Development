@@ -1,0 +1,32 @@
+{
+  "name": "grunt-test-plugin",
+  "version": "0.1.0",
+  "description": "The best Grunt plugin",
+  "author": "dastangoo <hamed.dastangoo@gmail.com>",
+  "keywords": [
+    "gruntplugin",
+    "grunt-test-plugin"
+  ],
+  "license": "MIT",
+  "main": "Gruntfile.js",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3",
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-eslint": "^18.0.0",
+    "grunt-mocha-test": "^0.12.7"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dastangoo/grunt-test-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dastangoo/grunt-test-plugin/issues"
+  },
+  "homepage": "https://github.com/dastangoo/grunt-test-plugin#readme"
+}
