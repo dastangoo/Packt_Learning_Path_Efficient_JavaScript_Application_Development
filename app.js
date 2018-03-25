@@ -4,18 +4,17 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
 // Import Routes
 var routes = require('./server/routes/index');
 var users = require('./server/routes/users');
+// Import comments controller
+var comments = require('./server/controllers/comments');
 
 // ODM With Mongoose
-var MongoStore = require('connect-mongo')(session);
-
+var mongoose = require('mongoose');
 // Modules to store session
-var session = require('express-session');
+var session    = require('express-session');
 var MongoStore = require('connect-mongo')(session);
-
 // Import Passport and Warning flash modules
 var passport = require('passport');
 var flash = require('connect-flash');
@@ -28,7 +27,6 @@ app.set('view engine', 'ejs');
 
 // Database configuration
 var config = require('./server/config/config.js');
-
 // connect to our database
 mongoose.connect(config.url);
 // Check if MongoDB is running
