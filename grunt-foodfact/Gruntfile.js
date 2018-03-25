@@ -1,0 +1,96 @@
+/*
+ * foodfact
+ * https://github.com/krampstudio/grunt-foodfact
+ *
+ * Copyright (c) 2016 Bertrand Chevrier
+ * Licensed under the MIT license.
+ */
+
+module.exports = function(grunt) {
+
+    grunt.initConfig({
+
+
+        eslint: {
+            all: [
+                'Gruntfile.js',
+                'tasks/*.js',
+                'lib/*.js'
+            ]
+        },
+
+
+        // Configuration to be run (and then tested).
+        foodfact: {
+            test: {
+              options: {
+                download: false
+              },
+              files: {
+                'test/data/out/db.json': ['test/data/in/*.csv']
+              }
+            }
+        },
+
+        clean : {
+            options: {
+                force : true
+            },
+            test: ['test/data/out/*']
+        },
+
+        connect : {
+            test: {
+                options : {
+                    hostname: 'localhost',
+                    port: 4422,
+                    base: 'test'
+                }
+            }
+        },
+
+        mochaTest: {
+            options: {
+                reporter: 'spec'
+            },
+            testLib: {
+                src: ['test/lib/*_spec.js']
+            },
+            testConvert: {
+              src: ['test/tasks/convert_spec.js']
+            },
+            testFull: {
+              src: ['test/tasks/full_spec.js']
+            }
+        },
+
+        watch : {
+            test: {
+                files : ['lib/*.js', 'tasks/*.js', 'test/**/*_spec.js'],
+                tasks:  ['test']
+            }
+        }
+    });
+
+    grunt.loadNpmTasks('grunt-eslint');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-mocha-test');
+
+    grunt.loadTasks('tasks');
+
+    grunt.registerTask('test', ['clean:test', 'mochaTest:test']);
+    grunt.registerTask('devtest', ['clean:test', 'connect:test', 'watch:test']);
+
+    grunt.event.on('*.foodfact', function(source) {
+      grunt.log.debug('Foodfact has made somthing');
+    });
+    grunt.event.on('convert.foodfact', function(source) {
+      grunt.log.debug('Conversion of ' + source);
+    });
+    
+    grunt.event.on('converted.foodfact', function(source, destination) {
+      grunt.log.debug('Conversion of ' + source + ' to ' + destination + ' done');
+    });
+};
