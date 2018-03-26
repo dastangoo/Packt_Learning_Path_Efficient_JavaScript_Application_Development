@@ -1,0 +1,21 @@
+{
+  "name": "javascript",
+  "description": "javascript",
+  "main": "server/server.js",
+  "authors": [
+    "dastangoo <hamed.dastangoo@gmail.com>"
+  ],
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/dastangoo/Packt_Learning_Path_Efficient_JavaScript_Application_Development",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha"
+  }
+}
